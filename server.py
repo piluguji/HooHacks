@@ -6,6 +6,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import scipy
 from scipy.stats import norm
+
+from expmarket import *
+
 # import yfinance as yf
 
 app = Flask(__name__)
@@ -24,7 +27,7 @@ def success(name):
       return jsonify(data)
 
 @app.route('/anal/<name>')
-def success(name):
+def successnew(name):
    if(request.method == 'GET'):
       data = {
          "Modules" : 15,
