@@ -1,6 +1,6 @@
 #Dependencies
 import pickle
-import numpy
+import numpy 
 import keras
 from keras.models import Sequential
 from keras.layers import Dense
@@ -42,8 +42,11 @@ for i in x:
 if len(input_premiums) is not len(expected):
 	print("fudck wrong lens")
 
-input_train = input_premiums #[exp]
-expected_train = expected
+input_train = numpy.asarray(expected_inps).reshape((30, 1))
+print(input_train.shape)
+
+expected_train = numpy.asarray(expected).reshape((30, 1))
+print(expected_train.shape)
 
 classifier = Sequential()
     
