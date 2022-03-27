@@ -62,12 +62,7 @@ classifier.compile(loss='mean_absolute_error', optimizer='adam', metrics=['mean_
 
 History = classifier.fit(x = input_train, y = expected_train, batch_size = 31, epochs = 150, verbose = 1)
 
-# print(numpy.array(input_train))
-# # # Neural network
-# model = Sequential()
-# model.add(Dense(64, input_dim=30, activation='relu'))
-# model.add(Dense(64, activation='relu'))
-# model.add(Dense(32, activation='relu'))
-# model.add(Dense(30, activation='sigmoid'))
-# model.compile(loss='mse', optimizer='adam', metrics=['accuracy'])
-# history = model.fit(numpy.asarray(input_train), numpy.asarray(expected_train), epochs=100, batch_size=30, verbose=1)
+y_pred = classifier.predict(input_train)
+
+print(expected_train)
+print(y_pred)
