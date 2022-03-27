@@ -51,8 +51,7 @@ def pdf2(Krange, S, t=0, r=0):
     # calls_clean = calls_clean[(calls_clean.strike > 300) & (calls_clean.strike < 375)]
 
     #Interpolates values 
-    vol_surface = scipy.interpolate.interp1d(calls_clean.strike, calls_clean.iv, kind="cubic",
-                                     fill_value="extrapolate")
+    vol_surface = scipy.interpolate.interp1d(calls_clean.strike, calls_clean.iv, kind="cubic", fill_value="extrapolate")
     x_new = np.arange(calls_clean.strike.min(), calls_clean.strike.max(), 0.1)
 
     C_interp = call_value(S, x_new, vol_surface(x_new), t)
@@ -64,5 +63,5 @@ def pdf2(Krange, S, t=0, r=0):
     return np.exp(r * t) * second_deriv
 
 bs_iv()
-pdf2(1, 1)
+pdf2(price, S, K, t=0, r=0, precision=1e-4, initial_guess=0.2, itr=1000, verbose=False)
 

@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import scipy
 from scipy.stats import norm
 
-from expmarket import *
+# from expmarket import *
 
 # import yfinance as yf
 
